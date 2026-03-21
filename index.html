@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FF Universal Panel</title>
+<style>
+body {
+  background:#0f172a;
+  color:white;
+  text-align:center;
+  font-family:sans-serif;
+}
+.box {
+  margin:15px;
+  padding:15px;
+  border-radius:15px;
+  background:#1e293b;
+}
+button {
+  padding:10px;
+  margin:5px;
+  border:none;
+  border-radius:10px;
+  background:#22c55e;
+  color:black;
+  font-weight:bold;
+}
+input {
+  padding:10px;
+  border-radius:10px;
+  border:none;
+  margin:5px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🔥 FF Universal Panel</h1>
+
+<div class="box">
+<h2>🎯 Sensitivity</h2>
+<input type="number" id="dpi" placeholder="DPI">
+<button onclick="calc()">Есептеу</button>
+<p id="result"></p>
+</div>
+
+<div class="box">
+<h2>🎮 HUD Generator</h2>
+<button onclick="hud()">Random HUD</button>
+<p id="hud"></p>
+</div>
+
+<div class="box">
+<h2>⚡ Info</h2>
+<button onclick="info()">Кеңес алу</button>
+<p id="info"></p>
+</div>
+
+<script>
+function calc(){
+let dpi=document.getElementById("dpi").value;
+let res = dpi * 0.5;
+document.getElementById("result").innerText = "Ұсыныс: " + res;
+}
+
+function hud(){
+let arr=["Aggressive","Balanced","Sniper","Rush"];
+document.getElementById("hud").innerText =
+arr[Math.floor(Math.random()*arr.length)];
+}
+
+function info(){
+document.getElementById("info").innerText =
+"Жоғары DPI → төмен sensitivity қолдан";
+}
+</script>
+
+</body>
+  </html>
